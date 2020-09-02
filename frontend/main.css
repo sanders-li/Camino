@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+:root {
+    --primaryColor: blue;
+    --secondaryColor: orange;
+    --mainWhite: white;
+    --mainBlack: black;
+    --mainGrey: #ececec;
+    --mainTransition: all 0.2s linear;
+}
+
+/* --------------- Navbar (TODO: No text wrapping, shrink search bar) --------------- */
+.navbar .container-fluid {
+    padding: 0;
+}
+
+.navbar-brand {
+    font-family: 'Caveat', cursive;
+    color: var(--mainWhite);
+    font-size: 180%;
+    padding-right: 1.5rem;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+}
+
+.plan-icon {
+    padding-left: 0.5rem;
+    color: var(--mainWhite);
+    cursor: pointer;
+}
+
+.plan-icon .plan-events {
+    position: absolute;
+    top: 3px;
+    left: 50px;
+
+    background: var(--secondaryColor);
+    border-radius: 30%;
+    color: var(--mainWhite);
+    height: 20px;
+    min-width: 20px;
+   
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------- Banner (TODO: Stretch banner text background across jumbotron, background img?) --------------- */
+
+.jumbotron {
+    background-image: url("https://i.pinimg.com/originals/dc/5b/b9/dc5bb9a6bda2970f3a9555b6efb1e488.png");
+    background-size: cover;
+    background-position-y: 50%;
+    border-radius: 0;
+}
+
+.jumbotron .banner-text {
+    color: var(--mainWhite);
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 5px;
+}
+
+/* --------------- Cards --------------- */
+
+.card:hover{
+    box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.45);
+    transform: translateY(-1%);
+    transition: var(--mainTransition);
+}
+
+.card{
+    overflow: hidden;
+    transition: var(--mainTransition);
+}
+
+.card-img-top:hover {
+    opacity: 0.8;
+    color: white;
+    transition: var(--mainTransition);
+}
+
+.card:hover .add-plan{
+    visibility: visible;
+    opacity: 1;
+    transition: var(--mainTransition);
+}
+
+.card-img-top{
+    transition: var(--mainTransition);
+}
+
+.card-between{
+    position: relative;
+    top: -20px;
+}
+
+.add-plan {
+    position: absolute;
+    right: 20px;
+
+    height: 35px;
+    width: 35px;
+    background: var(--secondaryColor);
+    border: none;
+    color: var(--mainWhite);
+    border-radius: 100%;
+
+    transition: var(--mainTransition);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.add-plan:hover {
+    color: var(--mainWhite);
+    background-color: darkorange;
+}
+
+.add-plan .icon {
+    position: absolute;
+    top: 5px;
+    left: 11px;
+}
+
+/* --------------- Sidebar Plan (Inventory) --------------- */
+/* TODO: Create locking option to keep sidebar perm on screen */
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    width: 400px;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    height: 100vh;
+    overflow-y: scroll;
+    background: lightblue;
+    z-index: 9999;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    transition: var(--mainTransition);
+}
+
+#sidebar.active {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -400px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+#sidebar .sidebar-header {
+    padding: 14px;
+    border-bottom: 1px solid #47748b;
+    text-align: center;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: skyblue;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-transition: var(--mainTransition);
+    -o-transition: var(--mainTransition);
+    transition: var(--mainTransition);
+}
+
+#dismiss:hover {
+    background: white;
+    color: black;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 9998;
+    opacity: 1;
+    transition: var(--mainTransition);
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ---------------- Plan items ---------------*/
+
+.plan-item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 1.5rem;
+    margin: 0 1rem;
+}
+/*-- best fit image inside 100px by 100px container --*/
+.plan-item .plan-img{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.plan-img img{
+    max-height: 100%;
+}

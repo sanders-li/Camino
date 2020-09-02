@@ -1,0 +1,16 @@
+env
+__pycache__
+.vscode
+/jupyter_notebook_tests/
+
+keys.json
+db_verification.json
+*.xlsx
+
+# These aren't used
+unused_trash.py
+Sight_db_ORM.py
+test_backup.py
+test.py
+UserInventory.py
+

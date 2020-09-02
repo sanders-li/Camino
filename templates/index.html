@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Camino</title>
+{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <a href="/reset" class="navbar-brand" >
+        <img src="/static/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        Camino
+    </a>
+    <form class="ml-3 my-auto d-inline w-100" action="/" method="POST">
+        <div class="input-group">
+            <input id = 'autocomplete' class="form-control mr-sm-2" type="search" name="city" id="city" placeholder="Where do you want to go?">
+            <div class="input-group-append">
+                <button class="btn btn-outline-info d-flex" type="submit">
+                    <span class='material-icons'>search</span>
+                </button>
+            </div>
+
+        </div>
+    </form>
+</nav>
+<br>
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-sm-offset-1">
+                {% if places %}
+                <div class="city" style="text-align: left">
+                    <h3>{{ city }}</h3>
+                </div>
+                <br>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            {% for title in search_titles.values() %}
+                            <th>{{ title }}</th>
+                            {% endfor %}
+                            <th></th>
+                        </tr>
+                    </thead>
+                    {% for row in places %}
+                        <tr>
+                            {% for key in search_titles.keys() %}
+                            <td>{{ row[key] }}</td>
+                            {% endfor %}
+                            <td>
+                                <button type="button" class="btn btn-outline-primary" onclick="window.location.href='/add/{{row['place_id']}}'">Add</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <div id="error">
+                    {% if city %}
+                    <h3>No results found for {{city}}</h3>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="col-sm-3 col-sm-offset-1">
+                <h3>Inventory</h3>
+                <br>
+                {% if inventory %}
+                <div class='inv'>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            {% for title in inv_titles.values() %}
+                            <th> {{ titles }}</th>
+                            {% endfor %}
+                            <th></th>
+                        </tr>
+                    </thead>
+                    {% for row in inventory %}
+                    <tr>
+                        {%for key in inv_titles.keys() %}
+                        <td>{{ row[key]}}</td>
+                        {% endfor %}
+                        <td>
+                            <button type="submit" class="btn btn-outline-danger" onclick="window.location.href='/remove/{{loop.index0}}'">Remove</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <h4>Add some sights!</h4>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type='button' class='btn btn-success' style="position:fixed;bottom:10px;right:10px;margin:0;padding:5px 20px;" onclick="window.location.href='/savefile'">Save Inventory</a>
+{% endblock %}

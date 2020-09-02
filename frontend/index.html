@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Camino</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link href=".\main.css" rel="stylesheet">
+
+    <!-- Custom Scrollbar -->
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/js/OverlayScrollbars.min.js"></script>
+    
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class='container-fluid'>
+            <a href="#">
+                <div class='navbar-brand d-flex'>
+                    <img src="./logo.png" class="d-inline-block align-top" alt="">
+                    Camino            
+                </div>
+            </a>
+            <div class="navbar-form mr-auto w-75">
+                <form action="/" method="POST">
+                    <div class="input-group">
+                        <input id = 'autocomplete' class="form-control mr-sm-2" type="search" name="city" id="city" placeholder="Where do you want to go?">
+                        <div class="input-group-append">
+                            <button class="btn btn-info" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="navbar navbar-icon">
+                <div class="plan-icon" id="sidebarExpand">
+                    <button type="button" class="btn btn-info">
+                        <i class="fas fa-suitcase"></i>
+                    </button>
+                    <div class='plan-events'>1</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <!-- plan -->
+    <!-- banner -->
+    <div class="jumbotron">
+        <div class="container banner-text">
+            <h1 class="display-4">Tokyo, Japan</h1>
+            <p class="lead">Japan’s busy capital, Tokyo mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples.</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Establish "card deck" -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+            <!-- instance of card -->
+            <div class="col mb-4">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="https://d2ahiw9kb7is19.cloudfront.net/-/media/B3002A62D64F4EC6875E7B7AA344B7B6.jpg?d=20171117T100912&w=750" alt='Card image cap'>
+                    <div class="card-between">
+                        <button type="button" class='add-plan'>
+                            <div class='icon'>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Senso-ji</h5>
+                        <p class="card-text">Historic temple to the goddess of mercy</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end instance -->
+            <!-- instance of card -->
+            <div class="col mb-4">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="https://d2ahiw9kb7is19.cloudfront.net/-/media/B3002A62D64F4EC6875E7B7AA344B7B6.jpg?d=20171117T100912&w=750" alt='Card image cap'>
+                    <div class="card-between">
+                        <button type="button" class='add-plan'>
+                            <div class='icon'>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Senso-ji</h5>
+                        <p class="card-text">Historic temple to the goddess of mercy</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end instance -->
+            <!-- instance of card -->
+            <div class="col mb-4">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="https://d2ahiw9kb7is19.cloudfront.net/-/media/B3002A62D64F4EC6875E7B7AA344B7B6.jpg?d=20171117T100912&w=750" alt='Card image cap'>
+                    <div class="card-between">
+                        <button type="button" class='add-plan'>
+                            <div class='icon'>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Senso-ji</h5>
+                        <p class="card-text">Historic temple to the goddess of mercy</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end instance -->
+            <!-- instance of card -->
+            <div class="col mb-4">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="https://d2ahiw9kb7is19.cloudfront.net/-/media/B3002A62D64F4EC6875E7B7AA344B7B6.jpg?d=20171117T100912&w=750" alt='Card image cap'>
+                    <div class="card-between">
+                        <button type="button" class='add-plan'>
+                            <div class='icon'>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Senso-ji</h5>
+                        <p class="card-text">Historic temple to the goddess of mercy</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end instance -->
+            <!-- instance of card -->
+            <div class="col mb-4">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="https://d2ahiw9kb7is19.cloudfront.net/-/media/B3002A62D64F4EC6875E7B7AA344B7B6.jpg?d=20171117T100912&w=750" alt='Card image cap'>
+                    <div class="card-between">
+                        <button type="button" class='add-plan'>
+                            <div class='icon'>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Senso-ji</h5>
+                        <p class="card-text">Historic temple to the goddess of mercy</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end instance -->
+        </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="sidebar-header">
+                <h3>Plan</h3>
+            </div>
+            <div class="plan-content">
+                <br>
+                <!-- Event Item -->
+                <div class="plan-item">
+                    <div class="plan-img">
+                        <img src="https://d2ahiw9kb7is19.cloudfront.net/-/media/B3002A62D64F4EC6875E7B7AA344B7B6.jpg?d=20171117T100912&w=750" alt="product" />
+                    </div>
+                    <div class="plan-text">
+                        <h5>Senso-ji</h5>
+                        <p>Historic temple to the goddess of mercy</p>
+                    </div>
+                    <div class="remove">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <!-- End of Event Item -->
+
+                
+            </div>
+        </nav>
+    </div>
+    <!-- End of Sidebar -->
+
+    <div class="overlay"></div>
+    
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <!-- old jquery script
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarExpand').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+            });
+        });
+    </script>
+    -->
+    
+    <script src=".\app.js"></script>
+</body>
+
+</html>

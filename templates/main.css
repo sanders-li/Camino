@@ -1,0 +1,15 @@
+.navbar-brand {
+    font-family: 'Caveat', cursive;
+    color: blue;
+    font-size: 180%;
+}
+
+div.inv { 
+    position: fixed;
+    margin:5px; 
+    padding:5px; 
+    height: 60%; 
+    width: 30%;
+    overflow: auto; 
+    text-align:justify; 
+} 
