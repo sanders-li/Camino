@@ -1,16 +1,13 @@
-env
-__pycache__
+.venv
+__*
 .vscode
-/jupyter_notebook_tests/
 
-keys.json
-db_verification.json
+*.json
 *.xlsx
 
 # These aren't used
-unused_trash.py
-Sight_db_ORM.py
-test_backup.py
-test.py
-UserInventory.py
+Procfile
 
+#testing environment
+/backend/testing
+/backend/misc

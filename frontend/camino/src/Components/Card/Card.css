@@ -1,0 +1,59 @@
+/* --------------- Cards --------------- */
+.card:hover{
+    box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.45);
+    transform: translateY(-1%);
+    transition: var(--mainTransition);
+}
+
+.card{
+    overflow: hidden;
+    transition: var(--mainTransition);
+}
+
+.card-img-top:hover {
+    opacity: 0.8;
+    color: white;
+    transition: var(--mainTransition);
+}
+
+.card:hover .add-plan{
+    visibility: visible;
+    opacity: 1;
+    transition: var(--mainTransition);
+}
+
+.card-img-top{
+    transition: var(--mainTransition);
+}
+
+.card-between{
+    position: relative;
+    top: -20px;
+}
+
+.add-plan {
+    position: absolute;
+    right: 20px;
+
+    height: 35px;
+    width: 35px;
+    background: var(--secondaryColor);
+    border: none;
+    color: var(--mainWhite);
+    border-radius: 100%;
+
+    transition: var(--mainTransition);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.add-plan:hover {
+    color: var(--mainWhite);
+    background-color: darkorange;
+}
+
+.add-plan .icon {
+    position: absolute;
+    top: 5px;
+    left: 11px;
+}

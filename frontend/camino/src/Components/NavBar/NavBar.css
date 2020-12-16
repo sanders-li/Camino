@@ -1,0 +1,43 @@
+/* --------------- Navbar (TODO: No text wrapping, shrink search bar) --------------- */
+.navbar .container-fluid {
+    padding: 0;
+}
+
+.navbar-brand {
+    font-family: 'Caveat', cursive;
+    color: var(--mainWhite);
+    font-size: 180%;
+    padding-right: 1.5rem;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+}
+
+.plan-icon {
+    padding-left: 0.5rem;
+    color: var(--mainWhite);
+    cursor: pointer;
+}
+
+.plan-icon .plan-events {
+    position: absolute;
+    top: 3px;
+    left: 50px;
+
+    background: var(--secondaryColor);
+    border-radius: 30%;
+    color: var(--mainWhite);
+    height: 20px;
+    min-width: 20px;
+   
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,13 +1,15 @@
+from collections import namedtuple
+
 import pandas as pd
-from Place import Sight
 import numpy as np
+import matplotlib.pyplot as plt
 from ortools.constraint_solver import pywrapcp
 from ortools.constraint_solver import routing_enums_pb2
-import matplotlib.pyplot as plt
 from geopy.distance import distance as geopy_distance
-from collections import namedtuple
-from SightScraper import WebAPIRequestHandler
 from adjustText import adjust_text
+
+from ..scraper.SightScraper import WebAPIRequestHandler
+from ..scraper.Place import Sight
 
 class RouteFinder:
     def __init__(self, data = {}):
