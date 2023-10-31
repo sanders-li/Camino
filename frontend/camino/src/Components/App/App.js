@@ -24,11 +24,11 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <main>
                 <NavBar onSearch={this.search} />
                 <Banner location={this.location} />
                 <CardDeck location={this.location} />
-            </div>
+            </main>
         )
     };
 }
