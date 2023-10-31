@@ -1,11 +1,11 @@
 .venv
 __*
 .vscode
-.ipynb_checkpoints
 
 *.json
+*.jsonl
 *.xlsx
-
+*.gguf
 
 # These aren't used
 Procfile
